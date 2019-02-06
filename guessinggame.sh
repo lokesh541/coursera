@@ -4,7 +4,7 @@ function guess() {
   read response
 
 }
-no_of_files=$(ls -l | wc -l)
+no_of_files=$(ls -aR | wc -l)
 guess
 while [[ t ]]; do
   if [[ $response =~ ^[0-9]+$ ]]; then
