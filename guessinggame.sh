@@ -5,8 +5,10 @@ function guess() {
 no_of_files=$(ls | wc -l)
 guess
 
-while [[ $response -ne $no_of_files ]]; do
-  if [[ $response -lt $no_of_files ]]; then
+while [[ $response -ne $no_of_files ]]; 
+do
+  if [[ $response -lt $no_of_files ]]; 
+  then
     echo "too low, guess again"
     guess
   else
