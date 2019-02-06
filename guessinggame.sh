@@ -1,29 +1,31 @@
+#!/bin/bash
 function guess() {
   echo "how many files are in the current directory?"
   read response
+
 }
-no_of_files=$(ls -a | wc -l)
+no_of_files=$(ls -l | wc -l)
 guess
-
-while [[ $response -ne $no_of_files ]];
-do
-  if [[ $response = ~^[0-9]+$ ]]; then
-    #statements
-    echo "not a number, please enter an integer"
-    guess
-
+while [[ t ]]; do
+  if [[ $response =~ ^[0-9]+$ ]]; then
+    if [[ $response -eq $no_of_files ]];
+     then
+       echo "congrats, you won"
+       exit 1
+     elif [[$response -lt $no_of_files  ]]; then
+       echo "too Low, guess again"
+       guess
+     else
+       echo "too High, guess again"
+       guess
+     fi
   else
-
-    if [[ $response -lt $no_of_files ]];
-    then
-      echo "too low, guess again"
-      guess
-    else
-      echo "too High, guess again"
-      guess
-    fi
+    echo "not a number please enter a number"
+    guess
   fi
-
-
 done
-echo "you win"
+
+
+
+
+# echo "you win"
