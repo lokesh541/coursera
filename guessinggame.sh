@@ -12,7 +12,7 @@ while [[ t ]]; do
      then
        echo "congrats, you won"
        exit 1
-     elif [[$response -lt $no_of_files  ]]; then
+     elif [[ $response -lt $no_of_files  ]]; then
        echo "too Low, guess again"
        guess
      else
